@@ -1,0 +1,39 @@
+# =====================================================================
+# Don't Starve Together (DST) Docker Compose Template
+# =====================================================================
+#
+# This file orchestrates the DST dedicated server container.
+# It uses host network mode by default to simplify UDP port mapping
+# (also host mode is a Linux thing, so if you're not on Linux, you need to use bridge mode).
+# and shard-to-shard communication.
+# =====================================================================
+
+services:
+  dst_server:
+    # Build the image using the local Dockerfile in the same directory
+    build: .
+    
+    # Custom name for the running container. Change this when deploying multiple servers!
+    container_name: BaseServer
+    
+    # Auto-restart policy: restarts the container if it crashes or the system reboots,
+    # unless it was manually stopped.
+    restart: unless-stopped
+    
+    # Host networking is recommended for DST to:
+    # 1. Avoid Docker NAT overhead for high-frequency UDP traffic.
+    # 2. Allow shards to easily talk to each other on localhost (127.0.0.1).
+    # 3. Simplify Steam match-making discovery.
+    network_mode: "host"
+    
+    # If network_mode is NOT "host" (e.g. if running on macOS or Windows where host mode isn't supported),
+    # uncomment the ports block below. Note that shard communication in bridge mode requires extra setup.
+    # ports:
+    #   # Opens the UDP ports for standard DST shard connections
+    #   - "10998-11001:10998-11001/udp"
+    
+    volumes:
+      # Mounts the local config folder (MyDediServer) to the game directory inside the container.
+      # This keeps your save data, tokens, and cluster configurations safe on the host machine.
+      # Format: <host_path>:<container_path>
+      - ./MyDediServer:/home/steam/.klei/DoNotStarveTogether/MyDediServer
