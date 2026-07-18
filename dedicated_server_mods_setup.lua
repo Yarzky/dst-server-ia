@@ -27,35 +27,38 @@
 --       (the rest are optional, my preference)
 ------------------------------------------------------------------------
 
--- Show Bundle (Displays container/bundle contents when hovering)
+-- Show Bundle
 ServerModSetup("1111658995")
 
--- Epic Healthbar (Renders custom boss healthbars)
+-- Epic Healthbar
 ServerModSetup("1185229307")
 
--- Island Adventures - Shipwrecked (Brings Shipwrecked content to DST)
+-- Island Adventures - Shipwrecked
 ServerModSetup("1467214795")
 
--- Insight (Advanced info UI for items, food, players, mobs, etc.)
+-- Insight
 ServerModSetup("2189004162")
 
--- Seed Pouch (Adds a container specifically for crop seeds)
+-- Seed Pouch
 ServerModSetup("2311599832")
 
--- Stack Fish (Allows stacking of caught fish)
+-- Stack Fish
 ServerModSetup("3252362704")
 
--- Island Adventures - Core (Backend engine/resources for Island Adventures)
+-- Island Adventures - Core
 ServerModSetup("3435352667")
 
--- Lazy Furnace (Automated/always-burning smelting furnace)
+-- Lazy Furnace
 ServerModSetup("875994715")
 
--- Global Ping (Show custom ping markers on screen)
+-- Global Ping
 ServerModSetup("2808279156")
 
--- Global Positions Remapped (Show teammates' positions on map/HUD)
+-- Global Positions Remapped 
 ServerModSetup("2902364746")
 
--- [API] Modded Skins (Framework enabling mod developers to add skins)
+-- [API] Modded Skins 
 ServerModSetup("2812783478")
+
+-- Terrarium Targest Closest Player
+ServerModSetup("2785785516")
