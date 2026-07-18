@@ -248,5 +248,7 @@ return {
   ["workshop-875994715"] = {
     enabled = true,
     configuration_options = {}
-  } 
+  }, 
+  -- Terrarium Target Closest Player
+  ["workshop-2785785516"]={ configuration_options={  }, enabled=true }
 }
